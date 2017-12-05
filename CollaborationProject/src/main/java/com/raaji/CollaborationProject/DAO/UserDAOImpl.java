@@ -1,144 +1,58 @@
 package com.raaji.CollaborationProject.DAO;
 
-import java.util.List;
-
-
-import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.raaji.CollaborationProject.Model.UserPart;
 
-
-@SuppressWarnings("deprecation")
-@Repository("userDAO")
-@EnableTransactionManagement
-
-
-public class UserDAOImpl implements UserDAO 
+public class UserDAOImpl implements UserDAO
 {
-private static final Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
-	
-	@Autowired
-	private SessionFactory sessionFactory;
-	
-	public UserDAOImpl(SessionFactory sessionFactory) 
-	{
-		try 
-		{
-			this.sessionFactory = sessionFactory;
-			log.info("Connection Established Successfully");
-		} 
-		catch (Exception ex) 
-		{
-			log.error("Failed to establish connection");
-			ex.printStackTrace();
-		}
+    @Autowired
+    public SessionFactory sessionFactory;
+    
+	public UserDAOImpl(SessionFactory sessionFactory){
+		this.sessionFactory=sessionFactory;
 	}
 	
 	@Transactional
-	public boolean addUser(UserPart userPart) 
-	{
-		log.info("Add User Method Started");
-		try
-		{
-			sessionFactory.getCurrentSession().saveOrUpdate(userPart);
-			log.info("Add User Method Success");
-			return true;
-		}
-		catch(Exception ex)
-		{
-			log.error("Add User has an Error");
-			ex.printStackTrace();
-			return false;
-		}
-	}
-
-	@Transactional
-	public boolean validateUser(String userName, String password) 
-	{
-		log.info("Validate User Method Started");
-		try
-		{
-			UserPart userPart =  sessionFactory.getCurrentSession().get(UserPart.class, userName);
-			if(userPart.getPassword().equals(password))
-			{
-				userPart.setErrorCode("200");
-				userPart.setErrorMsg("User Found");
-				log.info("Valid User");
-				return true;
-			}
-			else
-			{
-				userPart.setErrorCode("100");
-				userPart.setErrorMsg("Password is incorrect");
-				log.info("Invalid password");
-				return false;
-			}
-		} catch(Exception ex)
-		{
-			UserPart userPart = new UserPart();
-			userPart.setErrorCode("100");
-			userPart.setErrorMsg("Username not found");
-			log.error("Username Not found in database");
-			return false;
-		}
-	}
-
-	@Transactional
-	public UserPart getUser(String userName) 
-	{
-		log.debug("Starting of Method Get User "+userName);
-		try
-		{
-			UserPart userPart =  sessionFactory.getCurrentSession().get(UserPart.class, userName);
-			userPart.setErrorCode("200");
-			userPart.setErrorMsg("User Found");
-			return userPart;
-		}
-		catch(Exception ex)
-		{
-			UserPart userPart = new UserPart();
-			ex.printStackTrace();
-			userPart.setErrorCode("404");
-			userPart.setErrorMsg("User Not Found");
-			return null;
-		}
-	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Transactional
-	public List<UserPart> getUserList() 
-	{
-		log.info("Starting of List Method");
-		String hql_string = "FROM User";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql_string);
-		log.info("List Retrieved");
-		return query.list();
-	}
-
-	@Transactional
-	public boolean deleteUser(UserPart userPart) 
-	{
-		log.info("Delete User method Started");
-		try
-		{
-			log.info("Delete user Success");
-			sessionFactory.getCurrentSession().delete(userPart);
-			return true;
-		}
-		catch(Exception ex)
-		{
-			log.info("Delete User Unsuccessful");
-			ex.printStackTrace();
-			return false;
-		}
 	
+	public boolean addUser(UserPart user) {
+        try{
+		sessionFactory.getCurrentSession().save(user); 
+        }
+        catch(Exception e)
+        {
+        	System.out.println("Exception has occured..."+e);
+        }
+		return false;
+        
+	}
+    @Transactional
+    
+	public boolean updateOnlineStatus(String status, UserPart user)
+    {
+    	 try
+    	 {
+    	   user.setIsOnline(status);	 
+    	   sessionFactory.getCurrentSession().save(user); 
+    	 }
+    	  catch(Exception e)
+    	 {
+           System.out.println("Exception has occured..."+e);
+    	   
+    	 }
+		return false;
+    	 	
+	}
+
+	public UserPart getUser(String username) {
+     
+		Session session= sessionFactory.openSession();
+		UserPart user=(UserPart)session.get(UserPart.class,username);
+		session.close();
+		return user;
 	}	
 }
 
