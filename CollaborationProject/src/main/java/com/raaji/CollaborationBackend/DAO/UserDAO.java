@@ -1,6 +1,6 @@
-package com.raaji.CollaborationProject.DAO;
+package com.raaji.CollaborationBackend.DAO;
 
-import com.raaji.CollaborationProject.Model.UserPart;
+import com.raaji.CollaborationBackend.Model.UserPart;
 
 public interface UserDAO {
   public boolean addUser(UserPart user);

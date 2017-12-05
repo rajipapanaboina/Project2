@@ -1,7 +1,8 @@
-package com.raaji.CollaborationProject.DAO;
+package com.raaji.CollaborationBackend.DAO;
 
 import java.util.List;
-import com.raaji.CollaborationProject.Model.ForumPart;
+
+import com.raaji.CollaborationBackend.Model.ForumPart;
 
 public interface ForumDAO {
 	public boolean addForum(ForumPart forum);

@@ -1,4 +1,4 @@
-package com.raaji.CollaborationProject.Model;
+package com.raaji.CollaborationBackend.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

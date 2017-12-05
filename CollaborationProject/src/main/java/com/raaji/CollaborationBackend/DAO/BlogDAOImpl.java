@@ -1,4 +1,4 @@
-package com.raaji.CollaborationProject.DAO;
+package com.raaji.CollaborationBackend.DAO;
 
 import java.util.List;
 import org.hibernate.Session;
@@ -6,7 +6,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import com.raaji.CollaborationProject.Model.BlogPart;
+
+import com.raaji.CollaborationBackend.Model.BlogPart;
 @Repository("blogDAO")
 public class BlogDAOImpl implements BlogDAO 
 {

@@ -1,7 +1,8 @@
-package com.raaji.CollaborationProject.DAO;
+package com.raaji.CollaborationBackend.DAO;
 
 import java.util.List;
-import com.raaji.CollaborationProject.Model.BlogPart;
+
+import com.raaji.CollaborationBackend.Model.BlogPart;
 
 public interface BlogDAO 
 {

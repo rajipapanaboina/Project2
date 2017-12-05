@@ -1,4 +1,4 @@
-package com.raaji.CollaborationProject.Model;
+package com.raaji.CollaborationBackend.Model;
 
 import java.util.Date;
 
@@ -7,16 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table
-public class BlogPart 
-{
+public class ForumPart {
 	@Id
-	int blogId;
+	int forumId;
 	
-	String blogName;
-	String blogContent;
+	String forumName;
+	String forumContent;
 	String username;
 	String status;
-	int likes;
+	
 	
 	Date createDate;
 	
@@ -26,29 +25,29 @@ public class BlogPart
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public int getBlogId() 
+	public int getForumId() 
 	{
-		return blogId;
+		return forumId;
 	}
-	public void setBlogId(int blogId) 
+	public void setForumId(int forumId) 
 	{
-		this.blogId = blogId;
+		this.forumId = forumId;
 	}
-	public String getBlogName() 
+	public String getForumName() 
 	{
-		return blogName;
+		return forumName;
 	}
-	public void setBlogName(String blogName) 
+	public void setForumName(String forumName) 
 	{
-		this.blogName = blogName;
+		this.forumName = forumName;
 	}
-	public String getBlogContent() 
+	public String getForumContent() 
 	{
-		return blogContent;
+		return forumContent;
 	}
-	public void setBlogContent(String blogContent) 
+	public void setForumContent(String forumContent) 
 	{
-		this.blogContent = blogContent;
+		this.forumContent = forumContent;
 	}
 	public String getUsername() 
 	{
@@ -64,13 +63,5 @@ public class BlogPart
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getLikes() {
-		return likes;
-	}
-	public void setLikes(int likes) {
-		this.likes = likes;
-	}
-	
-	
 	
 }

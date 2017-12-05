@@ -1,11 +1,11 @@
-package com.raaji.CollaborationProject.DAO;
+package com.raaji.CollaborationBackend.DAO;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.raaji.CollaborationProject.Model.UserPart;
+import com.raaji.CollaborationBackend.Model.UserPart;
 
 public class UserDAOImpl implements UserDAO
 {

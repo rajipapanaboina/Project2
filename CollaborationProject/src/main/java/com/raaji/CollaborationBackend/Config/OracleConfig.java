@@ -1,4 +1,4 @@
-package com.raaji.CollaborationProject.Config;
+package com.raaji.CollaborationBackend.Config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -10,16 +10,17 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import com.raaji.CollaborationProject.DAO.BlogDAO;
-import com.raaji.CollaborationProject.DAO.BlogDAOImpl;
-import com.raaji.CollaborationProject.DAO.UserDAO;
-import com.raaji.CollaborationProject.DAO.UserDAOImpl;
-import com.raaji.CollaborationProject.Model.BlogPart;
-import com.raaji.CollaborationProject.Model.UserPart;
+
+import com.raaji.CollaborationBackend.DAO.BlogDAO;
+import com.raaji.CollaborationBackend.DAO.BlogDAOImpl;
+import com.raaji.CollaborationBackend.DAO.UserDAO;
+import com.raaji.CollaborationBackend.DAO.UserDAOImpl;
+import com.raaji.CollaborationBackend.Model.BlogPart;
+import com.raaji.CollaborationBackend.Model.UserPart;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.raaji.CollaborationProject")
+@ComponentScan("com.raaji.CollaborationBackend")
 
 public class OracleConfig 
 {

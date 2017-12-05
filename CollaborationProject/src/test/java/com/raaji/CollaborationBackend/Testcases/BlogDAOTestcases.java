@@ -1,4 +1,4 @@
-package com.raaji.CollaborationProject.Testcases;
+package com.raaji.CollaborationBackend.Testcases;
 
 import static org.junit.Assert.*;
 
@@ -7,8 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.raaji.CollaborationProject.DAO.BlogDAO;
-import com.raaji.CollaborationProject.Model.BlogPart;
+
+import com.raaji.CollaborationBackend.DAO.BlogDAO;
+import com.raaji.CollaborationBackend.Model.BlogPart;
 
 public class BlogDAOTestcases {
 

@@ -1,4 +1,4 @@
-package com.raaji.CollaborationProject.Testcases;
+package com.raaji.CollaborationBackend.Testcases;
 
 import static org.junit.Assert.*;
 
@@ -8,10 +8,10 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Repository;
 
-import com.raaji.CollaborationProject.DAO.BlogDAO;
-import com.raaji.CollaborationProject.DAO.UserDAO;
-import com.raaji.CollaborationProject.Model.BlogPart;
-import com.raaji.CollaborationProject.Model.UserPart;
+import com.raaji.CollaborationBackend.DAO.BlogDAO;
+import com.raaji.CollaborationBackend.DAO.UserDAO;
+import com.raaji.CollaborationBackend.Model.BlogPart;
+import com.raaji.CollaborationBackend.Model.UserPart;
 @Repository("userDAO")
 public class UserDAOTestcases {
 
