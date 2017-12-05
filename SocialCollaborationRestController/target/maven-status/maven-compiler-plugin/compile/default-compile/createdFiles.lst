@@ -1,0 +1,3 @@
+com\raaji\CollaborationBackend\Configuration\WebInitializer.class
+com\raaji\CollaborationBackend\Configuration\WebResolver.class
+com\raaji\CollaborationBackend\RestController\BlogController.class
