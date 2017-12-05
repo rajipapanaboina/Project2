@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.raaji.CollaborationProject.DAO.BlogDAO;
-import com.raaji.CollaborationProject.Model.BlogPart;
+import com.raaji.CollaborationBackend.DAO.BlogDAO;
+import com.raaji.CollaborationBackend.Model.BlogPart;
+
 
 @RestController
 public class BlogController {
