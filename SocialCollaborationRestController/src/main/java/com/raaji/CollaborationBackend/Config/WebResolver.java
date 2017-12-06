@@ -8,6 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
+
 @ComponentScan("com.raaji.CollaborationBackend")
 
 public class WebResolver {
@@ -16,7 +17,9 @@ public class WebResolver {
 	public InternalResourceViewResolver getViewResolver()
 	{
 		System.out.println("Resolver has been called....");
+		
 		InternalResourceViewResolver irvr = new InternalResourceViewResolver();
+		
 		irvr.setPrefix("/WEB-INF/jsp");
 		irvr.setSuffix(".jsp");
 		return irvr;

@@ -18,6 +18,7 @@ public class BlogController {
 	BlogDAO blogDAO;
 	
 	@PostMapping(value="/insertBlog")
+	
 	public ResponseEntity<String> insertBlog(BlogPart blogPart)
 	{
 		int i=10;
@@ -26,6 +27,7 @@ public class BlogController {
 		 return new ResponseEntity<String>("Blog is added successfully",HttpStatus.OK);
 		 
 	 }
+	 
 	 else
 	 {
 		 return new ResponseEntity<String>("error in response entity",HttpStatus.SERVICE_UNAVAILABLE);
