@@ -12,6 +12,17 @@ $scope.registerUser=function()
 
 });
 }
+$scope.login=function()
+{
+	console.log('login function..');
+	$http.post('http://localhost:8083/SocialCollaborationRestController/registerUser',$scope.user)
+    .then(function(response)
+     
+    {
+       $scope.user=response.data;
+       $location.path("/")
+    		});
+}
 });
 	
 	

@@ -21,7 +21,7 @@ public class UserController {
 		System.out.println("Registration");
 		
 		userPart.setRole("User");
-		//userPart.isOnline("Y");
+		userPart.setIsOnline("N");
 		if(userDAO.addUser(userPart))
 		{
 			return new ResponseEntity<String>("Registered",HttpStatus.OK);
