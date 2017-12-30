@@ -38,6 +38,10 @@ public class UserController {
 		
 		if(userDAO.checkLogin(userPart))
 		{
+			System.out.println("Logging");
+			UserPart tempUser=userDAO.getUser(userPart.getUsername());
+			userDAO.updateOnlineStatus("Y", tempUser);
+			//session.setAttribute("username",userPart.getUsername());
 			return new ResponseEntity<UserPart>(userPart,HttpStatus.OK);
 		}
 		else

@@ -20,7 +20,9 @@ $scope.login=function()
      
     {
        $scope.user=response.data;
-       $location.path("/")
+       $rootScope.currentUser=response.data;
+       console.log($rootScope.currentUser.role);
+       $location.path("/UserHome");
     		});
 }
 });

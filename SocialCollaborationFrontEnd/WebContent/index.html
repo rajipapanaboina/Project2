@@ -11,6 +11,9 @@
 </head>
 
 <body ng-app="myapp">
+
+Role : {{currentUser.role}}
+
 <table width="100%">
 
  <tr bgcolour="cyan">
@@ -22,8 +25,16 @@
          <a href="#/">Home</a>|&nbsp;&nbsp;&nbsp;
          <a href="#/Blog">Blog</a>|&nbsp;&nbsp;&nbsp;
          <a href="#/Forum">Forum</a>|&nbsp;&nbsp;&nbsp;
-         <a href="#/AdminBlog">Admin Blog</a>
-         <a href="#/Register">Sign Up</a>
+         <div ng-show="currentUser.role=='Admin'">
+         <a href="#/AdminBlog">Admin Blog</a>|&nbsp;&nbsp;&nbsp;
+         </div>
+         <div ng-hide="currentUser.role=='Admin'"||"currentUser.role=='User'">
+         <a href="#/Register">Sign Up</a>|&nbsp;&nbsp;&nbsp;
+         <a href="#/Login">Login</a>
+         </div>
+         <div ng-show="currentUser.role=='Admin'"||"currentUser.role=='User'">
+         <a href="#/Logout">Logout</a>
+         </div>
    </td>
  </tr>
  

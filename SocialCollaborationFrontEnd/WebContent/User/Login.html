@@ -1,6 +1,10 @@
 <div ng-controller="UserController">
         <form id="Users">
-             <table>
+             <table align="center" boarder="1">
+                 <tr>
+                     <td colspan="2"><center> Sign In </center></tr>td>
+                 </tr>
+                 
                  <tr>
                      <td> User Name </td>
                      <td><input type="text" ng-model="user.username"/></td>
@@ -11,7 +15,7 @@
                  </tr>
                  <tr>
                      <td colspan='2'>
-                     <input type="submit" ng-click="registerUser"/>
+                     <input type="submit" value="Login" ng-click="registerUser"/>
                      </td>
                  </tr>
                </table>

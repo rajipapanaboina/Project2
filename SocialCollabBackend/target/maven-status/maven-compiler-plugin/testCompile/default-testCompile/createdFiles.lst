@@ -1,0 +1,5 @@
+com\raaji\SocialCollabBackend\AppTest.class
+com\raaji\SocialCollabBackend\TestCases\TestBlog.class
+com\raaji\SocialCollabBackend\TestCases\TestEvent.class
+com\raaji\SocialCollabBackend\TestCases\TestJob.class
+com\raaji\SocialCollabBackend\TestCases\TestUser.class
