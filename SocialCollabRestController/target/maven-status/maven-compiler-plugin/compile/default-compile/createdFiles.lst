@@ -1,0 +1,15 @@
+com\raaji\SocialCollabBackEnd\Controller\FriendController.class
+com\raaji\SocialCollabBackEnd\Controller\UserController.class
+com\raaji\SocialCollabBackEnd\Controller\JobController.class
+com\raaji\SocialCollabBackEnd\Controller\AppliedJobsController.class
+com\raaji\SocialCollabBackEnd\Controller\BlogController.class
+com\raaji\SocialCollabBackEnd\Controller\FileUploadController.class
+com\raaji\SocialCollabBackEnd\Chat\Message.class
+com\raaji\SocialCollabBackEnd\Controller\ForumReplyController.class
+com\raaji\SocialCollabRestController\Util\Date_Time.class
+com\raaji\SocialCollabBackEnd\Chat\OutputMessage.class
+com\raaji\SocialCollabBackEnd\Controller\EventController.class
+com\raaji\SocialCollabBackEnd\Controller\ChatController.class
+com\raaji\SocialCollabBackEnd\Controller\BlogCommentController.class
+com\raaji\SocialCollabBackEnd\Controller\AdminController.class
+com\raaji\SocialCollabBackEnd\Controller\ForumController.class

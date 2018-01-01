@@ -30,7 +30,7 @@ import com.raaji.SocialCollabBackend.Model.User;
 
 
 @Configuration
-@ComponentScan("com.niit")
+@ComponentScan("com.raaji")
 @EnableTransactionManagement
 public class OracleConfiguration
 {
@@ -41,8 +41,8 @@ public class OracleConfiguration
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 			dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-			dataSource.setUsername("srinu");
-			dataSource.setPassword("srinu");
+			dataSource.setUsername("raaji");
+			dataSource.setPassword("raaji");
 			
 			return dataSource;
 		}

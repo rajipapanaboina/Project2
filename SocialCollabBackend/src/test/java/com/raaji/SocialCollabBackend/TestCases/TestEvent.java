@@ -30,7 +30,7 @@ public class TestEvent
 	public TestEvent()
 	{	
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.raaji");
+		context.scan("com.raaji.SocialCollabBackend");
 		context.refresh();
 
 		eventDAO = (EventDAO) context.getBean("eventDAO");
@@ -39,8 +39,8 @@ public class TestEvent
 	
 	public void add()
 	{
-		event.setName("Third Event");
-		event.setTime("23:00");
+		event.setName("3rd Event");
+		event.setTime("20:00");
 		event.setDate(new Date());
 		event.setDescription(" ");
 		event.setVenue("BLOCK D, MG Road, Hyd");
@@ -99,7 +99,7 @@ public class TestEvent
 	public static void main(String[] args) 
 	{
 		TestEvent test = new TestEvent();
-//		test.add();
+        test.add();
 //		test.delete();
 //		test.getEvent();
 		test.listEvent();

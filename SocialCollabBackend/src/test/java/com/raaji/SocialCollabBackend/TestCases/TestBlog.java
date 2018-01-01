@@ -27,7 +27,7 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	public TestBlog()
 	{	
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.raaji");
+		context.scan("com.raaji.SocialCollabBackend");
 		context.refresh();
 
 		blogDAO = (BlogDAO) context.getBean("blogDAO");
@@ -36,9 +36,9 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	
 	public void addBlog()
 	{
-		blog.setBlog_title("N th Blog");
-		blog.setDescription("Hello");
-		blog.setUsername("testdone");
+		blog.setBlog_title("1 st Blog");
+		blog.setDescription("Hello niit");
+		blog.setUsername("raaji");
 		blog.setDate_time("DATE_TIME");
 		blogDAO.addBlog(blog);
 		System.out.println("Success?");
@@ -46,8 +46,8 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	
 	public void updateBlog()
 	{
-		blog.setBlog_title("Second Blog");
-		blog.setDescription("Hello");
+		blog.setBlog_title("2nd  Blog");
+		blog.setDescription("welcome to niit");
 		blog.setUsername("Admin");
 		blog.setDate_time("DATE_TIME");
 		blogDAO.updateBlog(blog);
@@ -56,8 +56,8 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	
 	public void approveBlog()
 	{
-		blog.setBlog_title("Second Blog");
-		blog.setDescription("Hello");
+		blog.setBlog_title("2nd  Blog");
+		blog.setDescription("welcome to niit");
 		blog.setUsername("Admin");
 		blog.setDate_time("DATE_TIME");
 		blog.setStatus("Approved");
@@ -67,7 +67,7 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	
 	public void getBlog()
 	{
-		blog = blogDAO.getBlog("First Blog");
+		blog = blogDAO.getBlog("1st Blog");
 		if(blog == null)
 		{
 			System.out.println("Blog not found");
@@ -81,7 +81,7 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	
 	public void deleteBlog()
 	{
-		blog = blogDAO.getBlog("N th Blog");
+		blog = blogDAO.getBlog("1 st Blog");
 		boolean value = blogDAO.deleteBlog(blog);
 		if(value==true)
 		{
@@ -150,7 +150,7 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	public static void main(String[] args) 
 	{
 		TestBlog tb = new TestBlog();
-	//tb.addBlog();
+	    tb.addBlog();
 		tb.getAll();
 //		tb.approveBlog();
 //		tb.updateBlog();	

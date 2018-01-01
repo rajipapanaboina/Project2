@@ -32,7 +32,7 @@ public class TestUser
 	{
 		
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.raaji");
+		context.scan("com.raaji.SocialCollabBackend");
 		context.refresh();
 
 		userDAO = (UserDAO) context.getBean("userDAO");
@@ -44,13 +44,13 @@ public class TestUser
 	{
 		log.info("Add User Test started");
 		
-		user.setUsername("srinu");
-		user.setFirst_name("srinu");
-		user.setLast_name("");
+		user.setUsername("raaji");
+		user.setFirst_name("raaji");
+		user.setLast_name("papanaboina");
 		user.setDob(new Date());
-		user.setGender('M');
-		user.setMail_id("srinu@gmail.com");
-		user.setPassword("srinu");
+		user.setGender('F');
+		user.setMail_id("rajipapanaboina@gmail.com");
+		user.setPassword("raaji");
 		user.setStatus('N');
 		user.setRole("ADMIN");
 		
@@ -61,7 +61,7 @@ public class TestUser
 	public void getUserDetails()
 	{
 		log.info("Get User Details Started");
-		String userName = "SRINU";
+		String userName = "RAAJI";
 		user = userDAO.getUser(userName);
 		System.out.println("Name - "+user.getFirst_name());
 		System.out.println("Date - "+user.getDob());
@@ -108,8 +108,8 @@ public class TestUser
 	public static void main(String[] args) 
 	{
 		TestUser tuser = new TestUser();
-		tuser.testAdd();
-//		tuser.getUserDetails();
+	//	tuser.testAdd();
+	tuser.getUserDetails();
 //		tuser.validateUser();
 //		tuser.deleteUser();
 		//tuser.list();

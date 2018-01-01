@@ -28,7 +28,7 @@ public class TestJob
 	public TestJob()
 	{	
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.raaji");
+		context.scan("com.raaji.SocialCollabBackend");
 		context.refresh();
 
 		jobDAO = (JobDAO) context.getBean("jobDAO");
@@ -37,17 +37,17 @@ public class TestJob
 	
 	public void addJob()
 	{
-		job.setTitle("My Third Job");
-		job.setUsername("manasa1234");
+		job.setTitle("This is my Job Project");
+		job.setUsername("raaji");
 		job.setStatus('Y');
 		job.setPosition("Developers");
-		job.setCompany("Infotech");
+		job.setCompany("TCS");
 		job.setDescription("Software Engineer reqd freshers from 2016/2017 batch. Prefered Branch : CS/ IT");
-		job.setSalary("Rs. 3.5 LPA");
+		job.setSalary("Rs. 3.75 LPA");
 		job.setLocation("INDIA");
-		job.setQ_10("60.0%");
-		job.setQ_12("60.0%");
-		job.setQ_ug("65.0%");
+		job.setQ_10("88.66%");
+		job.setQ_12("92.7%");
+		job.setQ_ug("83%");
 		
 		Date_Time dt = new Date_Time();
 		String date = dt.getDateTime();
@@ -94,9 +94,9 @@ public class TestJob
 	public static void main(String[] args) 
 	{
 		TestJob tj = new TestJob();
-//		tj.addJob();
-		tj.listJob();
-//		tj.deleteJob();
+	tj.addJob();
+	tj.listJob();
+	tj.deleteJob();
 //		tj.inValidate();
 //		tj.getJob();
 	}
